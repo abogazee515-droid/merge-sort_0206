@@ -49,4 +49,32 @@ void mergeSort(int low, int high)
     // recursive calls
     mergeSort(low, mid);
     mergeSort(mid + 1, high);
+
+    // merging process
+    int i = low;
+    int j = mid + 1;
+    int k = low;
+
+    while (i <= mid && j <= high)
+    {
+        if (arr[i] <= arr[j])
+        {
+            B[k] = arr[i];
+            i++;
+        }
+        else
+        {
+            B[k] = arr[j];
+            j++;
+        }
+        k++;
+    }
+
+    // remaining elements
+    while (j <= high)
+    {
+        B[k] = arr[j];
+        j++;
+        k++;
+    }
 }
