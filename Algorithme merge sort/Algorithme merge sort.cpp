@@ -45,3 +45,8 @@ void mergeSort(int low, int high)
     }
 
     int mid = (low + high) / 2;
+
+    // recursive calls
+    mergeSort(low, mid);
+    mergeSort(mid + 1, high);
+}
